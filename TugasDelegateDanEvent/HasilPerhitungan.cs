@@ -16,10 +16,10 @@ namespace TugasDelegateDanEvent
         {
             InitializeComponent();
         }
-        private void proses(int a, int b, string operasi, string label, float hasil)
+        private void proses(int a, int b, string operasi, string simbol, float hasil)
         {
             listHasil.Items.Add(
-                String.Format($"Hasil {label} dari {a} {operasi} {b} = ") +
+                String.Format($"Hasil {operasi} {a} {simbol} {b} = ") +
                 String.Format(hasil % 1 == 0 ? "{0:0}" : "{0:0.00}", hasil) // Atur untuk 2 angka di belakang koma
             );
         }

@@ -12,7 +12,7 @@ namespace TugasDelegateDanEvent
 {
     public partial class Hitung : Form
     {
-        public delegate void Proses(int a, int b, string operasi, string label, float hasil);
+        public delegate void Proses(int a, int b, string operasi, string simbol, float hasil);
         public event Proses Perhitungan;
         public Hitung()
         {
@@ -41,34 +41,34 @@ namespace TugasDelegateDanEvent
             var b = int.Parse(NilaiB.Text);
 
             string operasi = "";
-            string label = "";
+            string simbol = "";
             float hasil = 0;
 
             switch (Operasi.SelectedIndex)
             {
                 case 0:
                     hasil = cal.Penjumlahan(a, b);
-                    label = "Penjumlahan";
-                    operasi = "+";
+                    operasi = "Penjumlahan";
+                    simbol = "+";
                     break;
                 case 1:
                     hasil = cal.Pengurangan(a, b);
-                    label = "Pengurangan";
-                    operasi = "-";
+                    operasi = "Pengurangan";
+                    simbol = "-";
                     break;
                 case 2:
                     hasil = cal.Perkalian(a, b);
-                    label = "Perkalian";
-                    operasi = "x";
+                    operasi = "Perkalian";
+                    simbol = "x";
                     break;
                 case 3:
                     hasil = (float)Calculator.Pembagian(a, b); 
-                    label = "Pembagian";
-                    operasi = "/";
+                    operasi = "Pembagian";
+                    simbol = "/";
                     break;
 
             }
-            Perhitungan(a, b, operasi, label, hasil);
+            Perhitungan(a, b, operasi, simbol, hasil);
         }
     }
 }
